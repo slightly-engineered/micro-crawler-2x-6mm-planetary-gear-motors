@@ -1,4 +1,4 @@
-// ESP32-C3 Zero: 2-motor crawler gait (BEAM style), full power short strokes
+// ESP32-C3 Super Mini: 2-motor crawler gait (BEAM style), full power short strokes
 // Diagonal crawl, repeating:
 //   1. FRONT motor, direction 1   (front right foot down)
 //   2. BACK  motor, direction 1   (back left foot kick)
