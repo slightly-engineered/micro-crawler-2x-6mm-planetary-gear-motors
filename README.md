@@ -5,7 +5,7 @@ back. Short full-power strokes alternate diagonally to crawl.
 
 | Folder | Contents |
 |---|---|
-| `c3_crawler/` | Arduino sketch: ESP32-C3 Zero with two RZ7888 H-bridge motor drivers |
+| `c3_crawler/` | Arduino sketch for an ESP32-C3 driving two DC motors through an H-bridge |
 | `stl/` | 3D-printable parts and fit-check reference models |
 
 ## Setup
@@ -17,6 +17,15 @@ board package:
 powershell -ExecutionPolicy Bypass -File .\setup.ps1             # asks before each install
 powershell -ExecutionPolicy Bypass -File .\setup.ps1 -CheckOnly  # only reports what is missing
 ```
+
+## Motor driver: two options
+
+The crawler shown on Instagram uses a **freeform-soldered H-bridge made from
+two RZ7888 driver chips** (SOP-8), one per motor, soldered point-to-point with
+no carrier board.
+
+The **easier method is a DRV8833 board**: one small module drives both motors,
+and it needs no SMD soldering. The sketch works unchanged with either driver.
 
 ## 3D-printed parts
 
@@ -45,7 +54,8 @@ The meshes are decimated for size; the Blender source stays off the repo.
 |---|---|---|
 | 6 mm planetary gear motor (x2) | 46 RPM option | [AliExpress](https://www.aliexpress.us/item/3256812043824069.html) |
 | ESP32-C3 Super Mini | | [AliExpress](https://www.aliexpress.us/item/3256807292829704.html) |
-| DRV8833 driver board | | [AliExpress](https://www.aliexpress.us/item/3256809648666681.html) |
+| DRV8833 driver board | Easier driver option | [AliExpress](https://www.aliexpress.us/item/3256809648666681.html) |
+| RZ7888 driver chip (x2) | Alternative: freeform H-bridge, as in the Instagram build | - |
 | LiPo battery | "2pcs 160mAh" option | [AliExpress](https://www.aliexpress.us/item/3256812564147983.html) |
 
 ## Gait
@@ -60,9 +70,25 @@ strokes overlap slightly. The timing is non-blocking.
 
 ## Wiring
 
-Front motor driver: IN A -> GPIO 4, IN B -> GPIO 5. See the top of
-`c3_crawler.ino` for the back motor pins. The ESP32-C3 strapping pins
+Each motor takes two PWM inputs (A/B). The ESP32-C3 strapping pins
 (GPIO 2, 8, 9) are deliberately unused.
+
+| ESP32-C3 | Sketch name | DRV8833 board | RZ7888 build |
+|---|---|---|---|
+| GPIO 4 | `FRONT_A` | AIN1 | Front RZ7888, input A |
+| GPIO 5 | `FRONT_B` | AIN2 | Front RZ7888, input B |
+| GPIO 6 | `BACK_A` | BIN1 | Back RZ7888, input A |
+| GPIO 7 | `BACK_B` | BIN2 | Back RZ7888, input B |
+
+- **DRV8833:** front motor to AOUT1/AOUT2, back motor to BOUT1/BOUT2, battery
+  to VM, and ground shared with the ESP32-C3. If your board breaks out a
+  SLEEP/STBY/EEP pin without an onboard pull-up, tie it high or the outputs
+  stay off.
+- **RZ7888:** each chip's two outputs go straight to its motor's terminals;
+  power each chip from the battery, with ground shared with the ESP32-C3.
+
+If a motor turns the wrong way, swap its two motor wires (or swap its A/B pins
+in the sketch).
 
 Requires ESP32 Arduino core 3.x (`ledcAttach` / `ledcWrite` by pin).
 

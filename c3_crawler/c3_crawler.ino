@@ -13,6 +13,10 @@
 //
 // Requires ESP32 Arduino core 3.x (ledcAttach/ledcWrite take a pin)
 //
+// Driver: two RZ7888 chips soldered freeform (one per motor), or one DRV8833 board.
+//   Both take two PWM inputs per motor; both inputs low = coast.
+//   DRV8833: FRONT_A/B -> AIN1/AIN2, BACK_A/B -> BIN1/BIN2.
+//
 // Wiring (strapping pins GPIO2/8/9 are NOT used):
 //   FRONT motor: IN A -> GPIO4, IN B -> GPIO5
 //   BACK  motor: IN A -> GPIO6, IN B -> GPIO7
