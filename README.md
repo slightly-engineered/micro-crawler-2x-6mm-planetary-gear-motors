@@ -61,7 +61,8 @@ The meshes are decimated for size; the Blender source stays off the repo.
 | DRV8833 driver board | Easier driver option | [AliExpress](https://www.aliexpress.us/item/3256809648666681.html) |
 | RZ7888 driver chip (x2) | Alternative: freeform H-bridge, as in the Instagram build | - |
 | LiPo battery | "2pcs 160mAh" option | [AliExpress](https://www.aliexpress.us/item/3256812564147983.html) |
-| Battery charging circuit (optional) | https://www.aliexpress.us/item/3256812904123021.html |
+| Battery charging circuit | (optional) | https://www.aliexpress.us/item/3256812904123021.html
+| RZ7888 | harder to solder | https://www.aliexpress.us/item/3256813044482237.html |
 | Wire hanger for legs |
 | JB Weld Epoxy |
 | Small heat shrink tubing (optonal) |
