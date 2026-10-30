@@ -59,8 +59,8 @@ The meshes are decimated for size; the Blender source stays off the repo.
 | 6 mm planetary gear motor (x2) | 46 RPM option | [AliExpress](https://www.aliexpress.us/item/3256812043824069.html) |
 | ESP32-C3 Super Mini | | [AliExpress](https://www.aliexpress.us/item/3256807292829704.html) |
 | DRV8833 driver board | Easier driver option | [AliExpress](https://www.aliexpress.us/item/3256809648666681.html) |
-| RZ7888 driver chip (x2) | harder to solder | https://www.aliexpress.us/item/3256813044482237.html |
-| LiPo battery | "2pcs 160mAh" option | [AliExpress](https://www.aliexpress.us/item/3256812564147983.html) |
+| RZ7888 driver chip (x2) | Slightly smaller - Harder to solder | https://www.aliexpress.us/item/3256813044482237.html |
+| LiPo battery | select "2pcs 160mAh" option | [AliExpress](https://www.aliexpress.us/item/3256812564147983.html) |
 | Battery charging circuit | (optional) | https://www.aliexpress.us/item/3256812904123021.html
 | Wire hanger for legs |
 | JB Weld Epoxy |
