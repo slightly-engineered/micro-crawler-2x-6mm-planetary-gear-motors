@@ -31,6 +31,8 @@ no carrier board.
 The **easier method is a DRV8833 board**: one small module drives both motors,
 and it needs no SMD soldering. The sketch works unchanged with either driver.
 
+![DRV8833 module pinout](images/drv8833.png)
+
 ## 3D-printed parts
 
 Print these from `stl/`:
