@@ -22,7 +22,7 @@ powershell -ExecutionPolicy Bypass -File .\setup.ps1 -CheckOnly  # only reports 
 
 ## Motor driver: two options
 
-The crawler shown on Instagram uses a **freeform-soldered H-bridge made from
+The crawler shown on Instagram uses a **(messily) freeform-soldered H-bridge made from
 two RZ7888 driver chips** (SOP-8), one per motor, soldered point-to-point with
 no carrier board.
 
