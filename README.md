@@ -26,6 +26,8 @@ The crawler shown on Instagram uses a **freeform-soldered H-bridge made from
 two RZ7888 driver chips** (SOP-8), one per motor, soldered point-to-point with
 no carrier board.
 
+![Freeform RZ7888 H-bridge soldered to the ESP32-C3](images/h-bridge-soldering.jpg)
+
 The **easier method is a DRV8833 board**: one small module drives both motors,
 and it needs no SMD soldering. The sketch works unchanged with either driver.
 
@@ -91,6 +93,8 @@ Each motor takes two PWM inputs (A/B). The ESP32-C3 strapping pins
   stay off.
 - **RZ7888:** each chip's two outputs go straight to its motor's terminals;
   power each chip from the battery, with ground shared with the ESP32-C3.
+
+![RZ7888 H-bridge wiring](images/h-bridge-circuit.png)
 
 If a motor turns the wrong way, swap its two motor wires (or swap its A/B pins
 in the sketch).
