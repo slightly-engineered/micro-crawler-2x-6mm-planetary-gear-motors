@@ -1,5 +1,7 @@
 # Micro Crawler: 2 x 6 mm Planetary Gear Motors
 
+![Micro crawler](images/micro-crawler.png)
+
 A BEAM-style crawler driven by two 6 mm planetary gear motors: one front, one
 back. Short full-power strokes alternate diagonally to crawl.
 
