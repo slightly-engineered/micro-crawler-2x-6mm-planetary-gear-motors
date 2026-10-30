@@ -1,8 +1,7 @@
 # Credentials: copy secrets.example.h to secrets.h locally
 secrets.h
 
-# CAD lives on the workstation for now (decimate before publishing)
-*.stl
+# CAD source stays on the workstation (decimated STLs are published in stl/)
 *.blend
 *.blend1
 *.ctb
